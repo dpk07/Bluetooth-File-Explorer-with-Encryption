@@ -47,5 +47,10 @@ namespace FileExplorer
             if (webBrowser1.CanGoForward)
                 webBrowser1.GoForward();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

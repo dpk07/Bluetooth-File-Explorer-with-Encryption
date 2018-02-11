@@ -32,8 +32,9 @@
             this.unlockFolder = new System.Windows.Forms.Button();
             this.result = new System.Windows.Forms.TextBox();
             this.lockFolder = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.stop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // regDevice
@@ -72,14 +73,15 @@
             this.lockFolder.Text = "Lock and Encrypt folder";
             this.lockFolder.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn4
             // 
-            this.button4.Location = new System.Drawing.Point(366, 156);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(214, 75);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn4.Location = new System.Drawing.Point(366, 156);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(214, 75);
+            this.btn4.TabIndex = 6;
+            this.btn4.Text = "Check connection";
+            this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
             // label1
             // 
@@ -90,13 +92,24 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Result:";
             // 
+            // stop
+            // 
+            this.stop.Location = new System.Drawing.Point(505, 252);
+            this.stop.Name = "stop";
+            this.stop.Size = new System.Drawing.Size(75, 23);
+            this.stop.TabIndex = 8;
+            this.stop.Text = "Stop";
+            this.stop.UseVisualStyleBackColor = true;
+            this.stop.Click += new System.EventHandler(this.stop_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 386);
+            this.Controls.Add(this.stop);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btn4);
             this.Controls.Add(this.lockFolder);
             this.Controls.Add(this.result);
             this.Controls.Add(this.unlockFolder);
@@ -115,7 +128,8 @@
         private System.Windows.Forms.Button unlockFolder;
         private System.Windows.Forms.TextBox result;
         private System.Windows.Forms.Button lockFolder;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button stop;
     }
 }

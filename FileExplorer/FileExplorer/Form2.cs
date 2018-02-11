@@ -36,12 +36,13 @@ namespace FileExplorer
 
 
         String deviceAddr;
-        BluetoothDeviceInfo di = null;
+  
         BluetoothClient bc = new BluetoothClient();
         DeviceScanner ds;
         Thread tr;
         String deviceName;
- private void regDevice_Click(object sender, EventArgs e)
+        myencryption en = new myencryption();
+        private void regDevice_Click(object sender, EventArgs e)
         {
             SelectBluetoothDeviceDialog selDia;
 
@@ -69,7 +70,7 @@ namespace FileExplorer
             {
                 ServiceThread();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //ExceptionHandler(e);
                 Environment.Exit(-1);
@@ -116,6 +117,24 @@ namespace FileExplorer
         {   
             System.Environment.Exit(1);
 
+        }
+
+        private void lockFile_Click(object sender, EventArgs e)
+        {
+            string[] dirs = Directory.GetFiles(@"C:\Users\DPk\Desktop\Bluetooth\test", "*");
+            for(var i = 0; i < dirs.Length; i++)
+            {
+                en.FileEncrypt(dirs[i], "deepak");
+            }
+            }
+
+        private void unlockFile_Click(object sender, EventArgs e)
+        {
+            string[] dirs = Directory.GetFiles(@"C:\Users\DPk\Desktop\Bluetooth\test", "*");
+            for (var i = 0; i < dirs.Length; i++)
+            {
+                en.FileDecrypt(dirs[i],dirs[i].Substring(0,dirs[i].Length-4) ,"deepak");
+            }
         }
     }
     

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.regDevice = new System.Windows.Forms.Button();
-            this.unlockFolder = new System.Windows.Forms.Button();
+            this.unlockFile = new System.Windows.Forms.Button();
             this.result = new System.Windows.Forms.TextBox();
-            this.lockFolder = new System.Windows.Forms.Button();
+            this.lockFile = new System.Windows.Forms.Button();
             this.btn4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.stop = new System.Windows.Forms.Button();
@@ -47,14 +47,15 @@
             this.regDevice.UseVisualStyleBackColor = true;
             this.regDevice.Click += new System.EventHandler(this.regDevice_Click);
             // 
-            // unlockFolder
+            // unlockFile
             // 
-            this.unlockFolder.Location = new System.Drawing.Point(89, 156);
-            this.unlockFolder.Name = "unlockFolder";
-            this.unlockFolder.Size = new System.Drawing.Size(214, 75);
-            this.unlockFolder.TabIndex = 2;
-            this.unlockFolder.Text = "Unlock and Decrypt folder";
-            this.unlockFolder.UseVisualStyleBackColor = true;
+            this.unlockFile.Location = new System.Drawing.Point(89, 156);
+            this.unlockFile.Name = "unlockFile";
+            this.unlockFile.Size = new System.Drawing.Size(214, 75);
+            this.unlockFile.TabIndex = 2;
+            this.unlockFile.Text = "Unlock and Decrypt folder";
+            this.unlockFile.UseVisualStyleBackColor = true;
+            this.unlockFile.Click += new System.EventHandler(this.unlockFile_Click);
             // 
             // result
             // 
@@ -64,14 +65,15 @@
             this.result.Size = new System.Drawing.Size(555, 81);
             this.result.TabIndex = 4;
             // 
-            // lockFolder
+            // lockFile
             // 
-            this.lockFolder.Location = new System.Drawing.Point(366, 54);
-            this.lockFolder.Name = "lockFolder";
-            this.lockFolder.Size = new System.Drawing.Size(214, 75);
-            this.lockFolder.TabIndex = 5;
-            this.lockFolder.Text = "Lock and Encrypt folder";
-            this.lockFolder.UseVisualStyleBackColor = true;
+            this.lockFile.Location = new System.Drawing.Point(366, 54);
+            this.lockFile.Name = "lockFile";
+            this.lockFile.Size = new System.Drawing.Size(214, 75);
+            this.lockFile.TabIndex = 5;
+            this.lockFile.Text = "Lock and Encrypt folder";
+            this.lockFile.UseVisualStyleBackColor = true;
+            this.lockFile.Click += new System.EventHandler(this.lockFile_Click);
             // 
             // btn4
             // 
@@ -110,9 +112,9 @@
             this.Controls.Add(this.stop);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn4);
-            this.Controls.Add(this.lockFolder);
+            this.Controls.Add(this.lockFile);
             this.Controls.Add(this.result);
-            this.Controls.Add(this.unlockFolder);
+            this.Controls.Add(this.unlockFile);
             this.Controls.Add(this.regDevice);
             this.Name = "Form2";
             this.Text = "OptionsPage";
@@ -125,9 +127,9 @@
         #endregion
 
         private System.Windows.Forms.Button regDevice;
-        private System.Windows.Forms.Button unlockFolder;
+        private System.Windows.Forms.Button unlockFile;
         private System.Windows.Forms.TextBox result;
-        private System.Windows.Forms.Button lockFolder;
+        private System.Windows.Forms.Button lockFile;
         private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button stop;

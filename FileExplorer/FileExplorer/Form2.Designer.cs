@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.regDevice = new System.Windows.Forms.Button();
             this.unlockFile = new System.Windows.Forms.Button();
             this.result = new System.Windows.Forms.TextBox();
@@ -35,6 +37,7 @@
             this.btn4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.stop = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // regDevice
@@ -104,6 +107,12 @@
             this.stop.UseVisualStyleBackColor = true;
             this.stop.Click += new System.EventHandler(this.stop_Click);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +128,7 @@
             this.Name = "Form2";
             this.Text = "OptionsPage";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.SizeChanged += new System.EventHandler(this.Form2_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +143,6 @@
         private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button stop;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

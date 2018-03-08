@@ -31,12 +31,14 @@ namespace FileExplorer
 
         private void Form2_Load(object sender, EventArgs e)
         {
+           
 
         }
 
-
+        int count=0,count2=0;
         String deviceAddr;
-  
+        
+
         BluetoothClient bc = new BluetoothClient();
         DeviceScanner ds;
         Thread tr;
@@ -79,7 +81,7 @@ namespace FileExplorer
 
         private void ServiceThread()
         {
-            var t = new System.Threading.Timer(o => check(), null, 0, 10000);
+            var t = new System.Threading.Timer(o => check(), null, 0, 5000);
             
 
         }
@@ -88,9 +90,79 @@ namespace FileExplorer
         public void check()
         {
             if (ds.DeviceInRange)
-                setText("Device is in range ");
+            {
+                if (count == 0)
+                {
+                    setText("Device is in range ");
+                    //maximize();
+                    
+                    setText("   decry");
+                    
+                    
+                    count2 = 0;
+                    //count++;
+                }
+            }
             else
-                setText("Device is not in range ");
+            {
+                if (count2 == 0)
+                {
+                    setText("Device is not in range ");
+                    //minimize();
+                    
+                    setText("  encry");
+                    string[] dirs = Directory.GetFiles(@"C:\Users\DPk\Desktop\Bluetooth\test", "*");
+                    for (var i = 0; i < dirs.Length; i++)
+                    {
+                        en.FileEncrypt(dirs[i], "deepak");
+                    }
+
+
+                    //count2++;
+                    count = 0;
+                }
+            }
+        }
+
+        public void minimize()
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action(minimize), new object[] {});
+                return;
+            }
+            WindowState = FormWindowState.Minimized;
+
+
+        }
+        public void maximize()
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action(maximize), new object[] { });
+                return;
+            }
+            WindowState = FormWindowState.Normal;
+
+
+        }
+        public void encrypt()
+        {
+            string[] dirs = Directory.GetFiles(@"C:\Users\DPk\Desktop\Bluetooth\test", "*");
+            for (var i = 0; i < dirs.Length; i++)
+            {
+                en.FileEncrypt(dirs[i], "deepak");
+            }
+        }
+
+        public void decrypt()
+        {
+            string[] dirs = Directory.GetFiles(@"C:\Users\DPk\Desktop\Bluetooth\test", "*");
+            for (var i = 0; i < dirs.Length; i++)
+            {
+                en.FileDecrypt(dirs[i], dirs[i].Substring(0, dirs[i].Length - 4), "deepak");
+            }
+
 
         }
         public void setText(String s)
@@ -121,23 +193,46 @@ namespace FileExplorer
 
         private void lockFile_Click(object sender, EventArgs e)
         {
-            string[] dirs = Directory.GetFiles(@"C:\Users\DPk\Desktop\Bluetooth\test", "*");
-            for(var i = 0; i < dirs.Length; i++)
-            {
-                en.FileEncrypt(dirs[i], "deepak");
-            }
-            }
+            Thread thread = new Thread(encrypt);
+            thread.Start();
+        }
 
         private void unlockFile_Click(object sender, EventArgs e)
         {
-            string[] dirs = Directory.GetFiles(@"C:\Users\DPk\Desktop\Bluetooth\test", "*");
-            for (var i = 0; i < dirs.Length; i++)
-            {
-                en.FileDecrypt(dirs[i],dirs[i].Substring(0,dirs[i].Length-4) ,"deepak");
-            }
+            Thread thread = new Thread(decrypt);
+            thread.Start();
         }
+
+        
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ShowInTaskbar = true;
+            this.Show();
+            WindowState = FormWindowState.Normal;
+            notifyIcon1.BalloonTipText = "Form maximized";
+            notifyIcon1.ShowBalloonTip(1000);
+            notifyIcon1.Visible = false;
+        }
+
+        private void Form2_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                ShowInTaskbar = false;
+                notifyIcon1.Visible = true;
+                notifyIcon1.BalloonTipText = "Device out of range, locking files";
+                notifyIcon1.ShowBalloonTip(1000);
+                this.Hide();
+            }
+          
+            
+        }
+
+        
+
+
+
+
     }
-    
-
-
 }

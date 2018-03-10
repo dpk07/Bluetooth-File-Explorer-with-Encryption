@@ -81,7 +81,7 @@ namespace FileExplorer
 
         private void ServiceThread()
         {
-            var t = new System.Threading.Timer(o => check(), null, 0, 10000);
+            var t = new System.Threading.Timer(o => check(), null, 0, 5000);
             
 
         }
@@ -100,6 +100,14 @@ namespace FileExplorer
                     decrypt();
                     
                     //count2 = 0;
+
+                    setText("Device is in range ");
+                    //maximize();
+                    
+                    setText("   decry");
+                    
+                    
+                    count2 = 0;
                     //count++;
                 }
             }
@@ -114,6 +122,21 @@ namespace FileExplorer
                           
                     //count2++;
                     //count = 0;
+
+                    setText("Device is not in range ");
+                    //minimize();
+                    
+                    setText("  encry");
+                    string[] dirs = Directory.GetFiles(@"C:\Users\DPk\Desktop\Bluetooth\test", "*");
+                    for (var i = 0; i < dirs.Length; i++)
+                    {
+                        en.FileEncrypt(dirs[i], "deepak");
+                    }
+
+
+                    //count2++;
+                    count = 0;
+
                 }
             }
         }
@@ -143,6 +166,9 @@ namespace FileExplorer
         public void encrypt()
         {
             string[] dirs = Directory.GetFiles(@"D:\My Files\Projects\BE\FileExplorer(23 commits)\test", "*");
+
+            string[] dirs = Directory.GetFiles(@"C:\Users\DPk\Desktop\Bluetooth\test", "*");
+
             for (var i = 0; i < dirs.Length; i++)
             {
                 en.FileEncrypt(dirs[i], "deepak");
@@ -151,7 +177,11 @@ namespace FileExplorer
 
         public void decrypt()
         {
+
             string[] dirs = Directory.GetFiles(@"D:\My Files\Projects\BE\FileExplorer(23 commits)\test", "*");
+
+            string[] dirs = Directory.GetFiles(@"C:\Users\DPk\Desktop\Bluetooth\test", "*");
+
             for (var i = 0; i < dirs.Length; i++)
             {
                 en.FileDecrypt(dirs[i], dirs[i].Substring(0, dirs[i].Length - 4), "deepak");

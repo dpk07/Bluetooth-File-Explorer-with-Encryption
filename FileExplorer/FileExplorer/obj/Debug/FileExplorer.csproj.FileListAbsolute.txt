@@ -1,0 +1,16 @@
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Debug\FileExplorer.exe.config
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Debug\FileExplorer.csprojResolveAssemblyReference.cache
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Debug\FileExplorer.Form1.resources
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Debug\FileExplorer.Form2.resources
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Debug\FileExplorer.Form3.resources
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Debug\FileExplorer.Form4.resources
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Debug\FileExplorer.Properties.Resources.resources
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Debug\FileExplorer.csproj.GenerateResource.Cache
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Debug\login.mdf
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Debug\login_log.ldf
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Debug\InTheHand.Net.Personal.dll
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Debug\InTheHand.Net.Personal.xml
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Debug\FileExplorer.exe
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Debug\FileExplorer.pdb
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Debug\FileExplorer.exe
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Debug\FileExplorer.pdb

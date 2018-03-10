@@ -35,7 +35,7 @@ namespace FileExplorer
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\DPk\Documents\login.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\swapn\Documents\login.mdf;Integrated Security=True;Connect Timeout=30");
             SqlDataAdapter sda = new SqlDataAdapter("Select * from login where username='"+username.Text+"'and password='"+password.Text+"'",con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -52,7 +52,7 @@ namespace FileExplorer
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            pictureBox1.BorderStyle = BorderStyle.None;
         }
     }
 }

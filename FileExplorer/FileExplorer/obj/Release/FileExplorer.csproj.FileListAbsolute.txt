@@ -1,0 +1,16 @@
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Release\FileExplorer.exe.config
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Release\login.mdf
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Release\login_log.ldf
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Release\InTheHand.Net.Personal.dll
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Release\InTheHand.Net.Personal.xml
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Release\FileExplorer.Form1.resources
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Release\FileExplorer.Form2.resources
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Release\FileExplorer.Form3.resources
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Release\FileExplorer.Form4.resources
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Release\FileExplorer.Properties.Resources.resources
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Release\FileExplorer.csproj.GenerateResource.Cache
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Release\FileExplorer.exe
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Release\FileExplorer.pdb
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\obj\Release\FileExplorer.csprojResolveAssemblyReference.cache
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Release\FileExplorer.exe
+D:\My Files\Projects\BE\FileExplorer(25 commits)\FileExplorer\FileExplorer\bin\Release\FileExplorer.pdb

@@ -1,6 +1,6 @@
-﻿CREATE TABLE [dbo].[Table]
+﻿CREATE TABLE [dbo].[login]
 (
 	[Id] INT NOT NULL PRIMARY KEY, 
-    [username] VARCHAR(50) NULL, 
-    [password] VARCHAR(50) NULL
+    [username] NVARCHAR(50) NOT NULL, 
+    [password] NVARCHAR(50) NOT NULL
 )

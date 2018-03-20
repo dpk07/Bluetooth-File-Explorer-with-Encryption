@@ -52,5 +52,25 @@ namespace FileExplorer
         {
 
         }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        private void toolsBtn_Click(object sender, EventArgs e)
+        {
+            Form fc = Application.OpenForms["Form2"];
+
+            if (fc != null)
+                fc.Close();
+            Form2 f2 = new Form2();
+            f2.Show();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //System.Windows.Forms.Application.Exit();
+        }
     }
 }

@@ -17,42 +17,57 @@ using System.IO;
 using System.Management;
 using InTheHand.Windows.Forms;
 
+
 namespace FileExplorer
 {
-       
-    public partial class Form2 : Form
-    {   
 
+    public partial class Form2 : Form
+    {
+        BluetoothClient bc;
+        SelectBluetoothDeviceDialog selDia;
         public Form2()
         {
             InitializeComponent();
-            }
+        }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-           
+            try
+            {
+                BluetoothClient bc = new BluetoothClient();
+            }
+            catch (System.PlatformNotSupportedException)
+            {
+                MessageBox.Show("Bluetooth not enabled. Please enable bluetooth of your laptop.");
+                Form fc = Application.OpenForms["Form2"];
+
+                if (fc != null)
+                    fc.Close();
+                Form2 f2 = new Form2();
+                f2.Show();
+            }
+
 
         }
 
-        int count=0,count2=0;
+        int count = 0, count2 = 0;
         String deviceAddr;
         String path;
         
-
-        BluetoothClient bc = new BluetoothClient();
+        
         DeviceScanner ds;
         
         String deviceName;
         myencryption en = new myencryption();
         private void regDevice_Click(object sender, EventArgs e)
         {
-            SelectBluetoothDeviceDialog selDia;
+            
 
             selDia = new SelectBluetoothDeviceDialog();
             //selDia.ShowUnknown = true;
             //selDia.AddNewDeviceWizard = true;
             //selDia.ShowDialog();
-            //selDia.AddNewDeviceWizard = false;
+            selDia.AddNewDeviceWizard = false;
 
             if (selDia.ShowDialog() != DialogResult.OK)
             {
@@ -237,6 +252,16 @@ namespace FileExplorer
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
+        }
+
+        private void btnNewDevice_Click(object sender, EventArgs e)
+        {
+
+            selDia = new SelectBluetoothDeviceDialog();
+            selDia.ShowUnknown = true;
+            selDia.AddNewDeviceWizard = true;
+            selDia.ShowDialog();
+            selDia.AddNewDeviceWizard = false;
         }
 
         private void Form2_SizeChanged(object sender, EventArgs e)

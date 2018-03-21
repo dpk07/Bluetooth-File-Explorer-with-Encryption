@@ -34,6 +34,7 @@ namespace FileExplorer
             {
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
+                    webBrowser1.Show();
                     webBrowser1.Url = new Uri(fbd.SelectedPath);
                     txtPath.Text = fbd.SelectedPath;
                 }
@@ -50,7 +51,7 @@ namespace FileExplorer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            webBrowser1.Hide();
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -60,6 +61,7 @@ namespace FileExplorer
 
         private void toolsBtn_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Please enable bluetooth of your laptop.");
             Form fc = Application.OpenForms["Form2"];
 
             if (fc != null)

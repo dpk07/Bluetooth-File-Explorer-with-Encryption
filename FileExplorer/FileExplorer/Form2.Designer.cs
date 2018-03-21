@@ -37,6 +37,7 @@
             this.btn4 = new System.Windows.Forms.Button();
             this.stop = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.btnNewDevice = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // regDevice
@@ -47,7 +48,7 @@
             this.regDevice.Name = "regDevice";
             this.regDevice.Size = new System.Drawing.Size(257, 128);
             this.regDevice.TabIndex = 0;
-            this.regDevice.Text = "Register your device";
+            this.regDevice.Text = "Select Device";
             this.regDevice.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.regDevice.UseVisualStyleBackColor = true;
             this.regDevice.Click += new System.EventHandler(this.regDevice_Click);
@@ -118,12 +119,24 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
+            // btnNewDevice
+            // 
+            this.btnNewDevice.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewDevice.Location = new System.Drawing.Point(61, 280);
+            this.btnNewDevice.Name = "btnNewDevice";
+            this.btnNewDevice.Size = new System.Drawing.Size(91, 30);
+            this.btnNewDevice.TabIndex = 9;
+            this.btnNewDevice.Text = "New Device";
+            this.btnNewDevice.UseVisualStyleBackColor = true;
+            this.btnNewDevice.Click += new System.EventHandler(this.btnNewDevice_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(683, 422);
+            this.Controls.Add(this.btnNewDevice);
             this.Controls.Add(this.stop);
             this.Controls.Add(this.btn4);
             this.Controls.Add(this.lockFile);
@@ -151,5 +164,6 @@
         private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Button stop;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Button btnNewDevice;
     }
 }

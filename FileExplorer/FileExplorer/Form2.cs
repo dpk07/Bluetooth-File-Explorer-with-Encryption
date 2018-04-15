@@ -46,6 +46,10 @@ namespace FileExplorer
                 Form2 f2 = new Form2();
                 f2.Show();
             }
+            finally
+            {
+                result.Text= "1.Click on select device if your device is already paired, else click on new device.\r\n2.To encrypt or decrypt once select the options on the second row.\r\n3.To encrypt your files based on bluetooth select the Check Connection option.\r\n4.Navigate to your required folder and select it.\r\n5.Click stop once you're done.";
+            }
 
 
         }
@@ -101,10 +105,11 @@ namespace FileExplorer
 
         public void check()
         {
+            result.Text = null;
             if (ds.DeviceInRange)
             {
                 setText(" Device is in range ");
-                setText(" Decry");
+                setText(" Decrypting");
                 
                 if (count == 0)
                 {
@@ -125,7 +130,7 @@ namespace FileExplorer
             else
             {
                 setText(" Device is not in range ");
-                setText(" Encry");
+                setText(" Encrypting");
                 
 
 
@@ -199,15 +204,19 @@ namespace FileExplorer
         }
         private void btn4_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog() { Description = "Select your path." })
+            if (deviceAddr != null)
             {
-                if (fbd.ShowDialog() == DialogResult.OK)
+                using (FolderBrowserDialog fbd = new FolderBrowserDialog() { Description = "Select your path." })
                 {
-                    
-                    path = fbd.SelectedPath;
+                    if (fbd.ShowDialog() == DialogResult.OK)
+                    {
+
+                        path = fbd.SelectedPath;
+                    }
                 }
+                InitTimer();
             }
-        InitTimer();
+            else MessageBox.Show("Please select a device.");
            
         }
 
@@ -262,6 +271,7 @@ namespace FileExplorer
             selDia.AddNewDeviceWizard = true;
             selDia.ShowDialog();
             selDia.AddNewDeviceWizard = false;
+            selDia.ShowDialog();
         }
 
         private void Form2_SizeChanged(object sender, EventArgs e)

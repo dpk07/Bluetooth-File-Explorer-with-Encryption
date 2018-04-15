@@ -61,7 +61,7 @@
             this.unlockFile.Name = "unlockFile";
             this.unlockFile.Size = new System.Drawing.Size(257, 128);
             this.unlockFile.TabIndex = 2;
-            this.unlockFile.Text = "Unlock and Decrypt folder";
+            this.unlockFile.Text = "Decrypt folder(One time)";
             this.unlockFile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.unlockFile.UseVisualStyleBackColor = true;
             this.unlockFile.Click += new System.EventHandler(this.unlockFile_Click);
@@ -84,7 +84,7 @@
             this.lockFile.Name = "lockFile";
             this.lockFile.Size = new System.Drawing.Size(257, 128);
             this.lockFile.TabIndex = 5;
-            this.lockFile.Text = "Lock and Encrypt folder";
+            this.lockFile.Text = "Encrypt folder(One time)";
             this.lockFile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lockFile.UseVisualStyleBackColor = true;
             this.lockFile.Click += new System.EventHandler(this.lockFile_Click);
@@ -97,7 +97,7 @@
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(257, 128);
             this.btn4.TabIndex = 6;
-            this.btn4.Text = "Check connection";
+            this.btn4.Text = "Check connection(Continuous)";
             this.btn4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn4.UseVisualStyleBackColor = true;
             this.btn4.Click += new System.EventHandler(this.btn4_Click);

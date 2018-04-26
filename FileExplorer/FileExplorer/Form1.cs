@@ -6,8 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-
+using System.Windows.Forms;using InTheHand.Net.Sockets;
 namespace FileExplorer
 {
     public partial class Form1 : Form
@@ -62,12 +61,22 @@ namespace FileExplorer
         private void toolsBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Please enable bluetooth of your laptop.");
-            Form fc = Application.OpenForms["Form2"];
+            try
+            {
+                BluetoothClient bc = new BluetoothClient();
+                Form fc = Application.OpenForms["Form2"];
 
-            if (fc != null)
-                fc.Close();
-            Form2 f2 = new Form2();
-            f2.Show();
+                if (fc != null)
+                    fc.Close();
+                Form2 f2 = new Form2();
+                f2.Show();
+            }
+            catch (System.PlatformNotSupportedException)
+            {
+                MessageBox.Show("Bluetooth not enabled. Please enable bluetooth of your laptop.");
+
+            }
+            
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

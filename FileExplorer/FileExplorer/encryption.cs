@@ -157,7 +157,7 @@ namespace FileExplorer {
                 }
                 finally
                 {
-                    File.Delete(inputFile);
+                    
                     fsOut.Close();
                     fsCrypt.Close();
                 }

@@ -23,7 +23,7 @@ namespace FileExplorer
 
     public partial class Form2 : Form
     {
-        BluetoothClient bc;
+        
         SelectBluetoothDeviceDialog selDia;
         public Form2()
         {
@@ -32,25 +32,10 @@ namespace FileExplorer
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            try
-            {
-                BluetoothClient bc = new BluetoothClient();
-            }
-            catch (System.PlatformNotSupportedException)
-            {
-                MessageBox.Show("Bluetooth not enabled. Please enable bluetooth of your laptop.");
-                Form fc = Application.OpenForms["Form2"];
-
-                if (fc != null)
-                    fc.Close();
-                Form2 f2 = new Form2();
-                f2.Show();
-            }
-            finally
-            {
+           
+           
                 result.Text= "1.Click on select device if your device is already paired, else click on new device.\r\n2.To encrypt or decrypt once select the options on the second row.\r\n3.To encrypt your files based on bluetooth select the Check Connection option.\r\n4.Navigate to your required folder and select it.\r\n5.Click stop once you're done.";
-            }
-
+            
 
         }
 
@@ -93,7 +78,7 @@ namespace FileExplorer
         {
             timer1 = new Timer();
             timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Interval = 15000; // in miliseconds
+            timer1.Interval = 5000; // in miliseconds
             timer1.Start();
         }
 
@@ -179,7 +164,9 @@ namespace FileExplorer
             for (var i = 0; i < dirs.Length; i++)
             {
                 en.FileEncrypt(dirs[i], "deepak");
+                File.Delete(dirs[i]);
             }
+            MessageBox.Show("Files encrypted successfully");
         }
 
         public void decrypt(String path1)
@@ -188,9 +175,10 @@ namespace FileExplorer
             for (var i = 0; i < dirs.Length; i++)
             {
                 en.FileDecrypt(dirs[i], dirs[i].Substring(0, dirs[i].Length - 4), "deepak");
+                File.Delete(dirs[i]);
             }
-
-
+            MessageBox.Show("Files decrypted successfully");
+            
         }
         public void setText(String s)
         {
@@ -224,6 +212,7 @@ namespace FileExplorer
         {
             if(timer1!=null)
             timer1.Stop();
+            this.Close();
 
         }
 
@@ -272,6 +261,11 @@ namespace FileExplorer
             selDia.ShowDialog();
             selDia.AddNewDeviceWizard = false;
             selDia.ShowDialog();
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
         }
 
         private void Form2_SizeChanged(object sender, EventArgs e)

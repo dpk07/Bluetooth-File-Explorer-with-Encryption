@@ -17,7 +17,7 @@ namespace FileExplorer
         {
             InitializeComponent();
         }
-
+       
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -35,10 +35,11 @@ namespace FileExplorer
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\DPk\Desktop\Bluetooth\bluetooth\FileExplorer\FileExplorer\login.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\login.mdf;Integrated Security=True;Connect Timeout=5");
 
             SqlDataAdapter sda = new SqlDataAdapter("Select * from login where username='"+username.Text+"'and password='"+password.Text+"'",con);
             DataTable dt = new DataTable();
+            con.Close();
             sda.Fill(dt);
             if (dt.Rows.Count>0)
             {
@@ -57,6 +58,29 @@ namespace FileExplorer
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form5 = new Form5();
+            form5.Closed += (s, args) => this.Close();
+            form5.Show();
+        }
+
+        private void password_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void username_TextChanged_1(object sender, EventArgs e)
         {
 
         }
